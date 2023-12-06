@@ -41,8 +41,6 @@ function Colin({ gameState, topArtist, bottomArtist, isWelcome }) {
     'Spectacularly spooky!',
     'Mysteriously magical!',
     'Strangely sublime!',
-
-    // Add more phrases as needed
   ]
 
   const colinTips = [
@@ -57,7 +55,7 @@ function Colin({ gameState, topArtist, bottomArtist, isWelcome }) {
       hint: `Make sure you draw right to the top of where ${topArtist}'s lines finish`,
     },
     {
-      tip1: colinPhrases[Math.floor(Math.random() * colinPhrases.length)], // Randomly select a phrase
+      tip1: colinPhrases[Math.floor(Math.random() * colinPhrases.length)],
       tip2: `${topArtist} and ${bottomArtist}, look at your marvelous creation!`,
       hint: "Don't forget to name and save your creation!",
     },
