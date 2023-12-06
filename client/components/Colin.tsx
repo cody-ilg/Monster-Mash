@@ -5,14 +5,6 @@ function Colin({ gameState, topArtist, bottomArtist, isWelcome }) {
     'client/public/colingspeechbubble.png',
   )
 
-  // useEffect(() => {
-  //   const timerId = setTimeout(() => {
-  //     setImgSrc('client/public/colin.png')
-  //   }, 5000)
-
-  //   return () => clearTimeout(timerId)
-  // }, [gameState])
-
   useEffect(() => {
     // Update image source based on gameState
     if (isWelcome === false) {
@@ -32,17 +24,32 @@ function Colin({ gameState, topArtist, bottomArtist, isWelcome }) {
     return () => clearTimeout(timerId)
   }, [gameState, isWelcome])
 
-  //testing
-  // console.log('gameState:', gameState)
-  // console.log('imgSrc:', imgSrc)
-  // console.log('colin isWelcome', isWelcome)
-  // console.log('artistNames in Colin', topArtist)
-  //
+  const colinPhrases = [
+    'Freakishly fantastic!',
+    'Marvelously monstrous!',
+    'Not sure what that is, but it certainly scares ME!',
+    'A delectable, demonstratively, devious and duplicitous demon!',
+    "Should it's face look like that?",
+    "I hope that thing doesn't eat other monsters",
+    "I'm gonna keep looking at you so I don't have to keep looking at THAT!",
+    'Did that thing come out of a Graveyard?',
+    'Fantastically ferocious!',
+    'Wonderfully weird!',
+    'Terrifically terrifying!',
+    'Eerily enchanting!',
+    'Bewitchingly bizarre!',
+    'Spectacularly spooky!',
+    'Mysteriously magical!',
+    'Strangely sublime!',
+
+    // Add more phrases as needed
+  ]
+
   const colinTips = [
     {
       tip1: `${bottomArtist}, close your eyes!`,
       tip2: `${topArtist}, draw me the top of the monster and then hit done when finished!`,
-      hint: `Make sure you draw right the the bottom of the white canvas`,
+      hint: 'Make sure you draw right to the bottom of the white canvas',
     },
     {
       tip1: `${topArtist}, close your eyes!`,
@@ -50,14 +57,14 @@ function Colin({ gameState, topArtist, bottomArtist, isWelcome }) {
       hint: `Make sure you draw right to the top of where ${topArtist}'s lines finish`,
     },
     {
-      tip1: 'Dreadfully delightful!',
-      tip2: `${topArtist} and ${bottomArtist} look at your marvelous creation!`,
-      hint: 'Dont forget to name and save your creation!',
+      tip1: colinPhrases[Math.floor(Math.random() * colinPhrases.length)], // Randomly select a phrase
+      tip2: `${topArtist} and ${bottomArtist}, look at your marvelous creation!`,
+      hint: "Don't forget to name and save your creation!",
     },
   ]
 
   const currentColinTip = colinTips[gameState]
-  console.log('colin gamestate', gameState)
+
   return (
     <>
       <div className="speech-bubble">
@@ -72,4 +79,5 @@ function Colin({ gameState, topArtist, bottomArtist, isWelcome }) {
     </>
   )
 }
+
 export default Colin
