@@ -2,21 +2,19 @@ import { useState, useEffect } from 'react'
 import colinspeechbubble from '../public/colinspeechbubble.png'
 
 function Colin({ gameState, topArtist, bottomArtist, isWelcome }) {
-  const [imgSrc, setImgSrc] = useState<string>(
-    'client/public/colingspeechbubble.png',
-  )
+  const [imgSrc, setImgSrc] = useState<string>(colinspeechbubble)
 
   useEffect(() => {
     if (isWelcome === false) {
-      setImgSrc('client/public/colingspeechbubble.png')
+      setImgSrc(colinspeechbubble)
     } else if (gameState === 1) {
-      setImgSrc('client/public/colingspeechbubble.png')
+      setImgSrc(colinspeechbubble)
     } else if (gameState === 2) {
-      setImgSrc('client/public/colingspeechbubble.png')
+      setImgSrc(colinspeechbubble)
     }
 
     const timerId = setTimeout(() => {
-      setImgSrc('../public/idle.png')
+      setImgSrc('client/public/idle.png')
     }, 5000)
 
     return () => clearTimeout(timerId)
