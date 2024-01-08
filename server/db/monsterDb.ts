@@ -1,10 +1,12 @@
 import connection from './connection.js'
+import fs from 'fs/promises'
 
 import {
   NewMonster,
   Monster,
   newMonsterName,
 } from '../../models/monster-models.js'
+import { FSWatcher } from 'vite'
 
 export async function getAllMonsters(): Promise<Monster[]> {
   try {
@@ -46,8 +48,23 @@ export async function addMonster(newMonsterData: NewMonster) {
 }
 
 export async function deleteMonsterById(id: number) {
-  const result = await connection('monsters').where({ id }).delete()
-  return result
+  try {
+    const monster = await connection('monsters').where({ id }).first()
+    if (!monster) {
+      throw new Error('Monster not found')
+    }
+
+    // const imageUrl = `../../${monster.image_url}`
+    const imageUrl = monster.image_url
+
+    await fs.unlink(imageUrl)
+
+    const result = await connection('monsters').where({ id }).delete()
+    return result
+  } catch (error) {
+    console.error('Error on delete monster by id', error)
+    throw error
+  }
 }
 
 export async function editMonsterName(
