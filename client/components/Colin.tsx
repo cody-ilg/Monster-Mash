@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import colinspeechbubble from '../public/colingspeechbubble.png'
+import idle from '../public/idle.png'
 
 function Colin({ gameState, topArtist, bottomArtist, isWelcome }) {
   const [imgSrc, setImgSrc] = useState<string>(colinspeechbubble)
@@ -14,7 +15,7 @@ function Colin({ gameState, topArtist, bottomArtist, isWelcome }) {
     }
 
     const timerId = setTimeout(() => {
-      setImgSrc('client/public/idle.png')
+      setImgSrc(idle)
     }, 5000)
 
     return () => clearTimeout(timerId)

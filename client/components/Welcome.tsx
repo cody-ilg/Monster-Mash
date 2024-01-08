@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import colinwelcome from '../public/colinwelcome.png'
 
 function Welcome({ setIsWelcome, setTopArtist, setBottomArtist }) {
   const [dummyTopArtist, setDummyTopArtist] = useState('')
@@ -23,11 +24,7 @@ function Welcome({ setIsWelcome, setTopArtist, setBottomArtist }) {
   return (
     <div className="welcome-container">
       <div className="colin-welcome">
-        <img
-          src="client/public/colinwelcome.png"
-          alt="colin waving"
-          className="colin"
-        />
+        <img src={colinwelcome} alt="colin waving" className="colin" />
         <div className="welcome-bubble">
           <div>
             <h2>
