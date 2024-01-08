@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "types": ["vite/client"],
+    "baseUrl": "./",
     "target": "es2020", 
     "jsx": "react-jsx",
     "module": "ES2020",
