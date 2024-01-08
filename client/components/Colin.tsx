@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import colinspeechbubble from 'client/public/colingspeechbubble.png'
+import colinspeechbubble from '../public/colingspeechbubble.png'
 
 function Colin({ gameState, topArtist, bottomArtist, isWelcome }) {
   const [imgSrc, setImgSrc] = useState<string>(colinspeechbubble)
