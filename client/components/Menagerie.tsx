@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
+import galleryFrame from '../public/galleryFrame.png'
 
 function Menagerie() {
   const {
@@ -17,22 +18,23 @@ function Menagerie() {
         {monsters &&
           monsters.map((monster) => {
             return (
-              <> 
+              <>
                 <Link to={`/monster/${monster.id}`}>
                   <div className="menagerie-item">
-                 
-                    <img className='monster'
+                    <img
+                      className="monster"
                       src={monster.image_url}
                       alt="Monster gallery thumbnail"
                     />
-                     <img className='frame'
-                      src='client/public/galleryFrame.png'
+                    <img
+                      className="frame"
+                      src="client/public/galleryFrame.png"
                       alt="Monster gallery frame"
                     />
-                    <div className = 'plaque'>
-                    <h4>{monster.monster_name}</h4>
+                    <div className="plaque">
+                      <h4>{monster.monster_name}</h4>
                     </div>
-                 </div> 
+                  </div>
                 </Link>
               </>
             )

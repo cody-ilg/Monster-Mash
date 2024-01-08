@@ -1,5 +1,7 @@
 import { useEffect } from 'react'
 import { useCanvas } from './CanvasContext'
+import gameDoneFrame from '../public/gameDoneFrame.png'
+import question from '../public/question.png'
 
 function DrawingZone({ gameState }) {
   const {
@@ -27,12 +29,12 @@ function DrawingZone({ gameState }) {
       <img
         className={gameState === 2 ? 'done-frame' : 'done-frame hidden'}
         alt="frame"
-        src="client/public/gameDoneFrame.png"
+        src={gameDoneFrame}
       />
       <div className="canvas-container">
         <img
           className={gameState === 1 ? 'question-top' : 'question-top hidden'}
-          src="client/public/question.png"
+          src={question}
           alt="concealed canvas"
           draggable="false"
         />
@@ -40,7 +42,7 @@ function DrawingZone({ gameState }) {
           className={
             gameState === 0 ? 'question-bottom' : 'question-bottom hidden'
           }
-          src="client/public/question.png"
+          src={question}
           alt="concealed canvas"
           draggable="false"
         />
