@@ -13,6 +13,7 @@
     "strict": true,
     "allowImportingTsExtensions": true,
     "allowJs": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "include": ["src/**/*.ts", "src/**/*.tsx", "client/public/**/*.png", "monsters/*.png"]
   }
 }
