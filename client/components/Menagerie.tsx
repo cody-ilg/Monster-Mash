@@ -28,7 +28,7 @@ function Menagerie() {
                     />
                     <img
                       className="frame"
-                      src="client/public/galleryFrame.png"
+                      src={galleryFrame}
                       alt="Monster gallery frame"
                     />
                     <div className="plaque">
